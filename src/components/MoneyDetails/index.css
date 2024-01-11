@@ -1,0 +1,50 @@
+/* Write your CSS here */
+
+.statuscontainer {
+  display: flex;
+  justify-content: space-between;
+}
+.eachcon1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ecfccb;
+}
+.eachcon2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #cffafe;
+}
+
+.eachcon3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ede9fe;
+}
+.imagecon1 {
+  background-color: #84cc16;
+  height: 30px;
+  width: auto;
+  border-radius: 15px;
+}
+.imagecon2 {
+  background-color: #06b6d4;
+  height: 30px;
+  width: auto;
+  border-radius: 15px;
+}
+.imagecon3 {
+  background-color: #06b6d4;
+  height: 30px;
+  width: auto;
+  border-radius: 15px;
+}
+
+.balance {
+  font-size: 15px;
+}
+.amount {
+  font-size: 20px;
+}
