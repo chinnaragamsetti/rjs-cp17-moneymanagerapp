@@ -1,1 +1,19 @@
 /* Write your CSS here */
+.contentlist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+  border: 1px solid #d7dfe9;
+  width: 100%;
+  padding-top: 0px;
+}
+.transactiondetails {
+  width: 28%;
+  color: #7e858e;
+}
+
+.deleteicon {
+  width: 10px;
+  height: 10px;
+}

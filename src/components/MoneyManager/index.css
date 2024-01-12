@@ -34,6 +34,7 @@
 .bottomcontainer {
   display: flex;
   height: 50%;
+  justify-content: space-between;
 }
 .inputscontainer {
   display: flex;
@@ -52,6 +53,7 @@
 .title {
   font-size: 15px;
   margin-bottom: 5px;
+  color: #7e858e;
 }
 .inputcontainer {
   padding: 10px;
@@ -83,18 +85,32 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+  padding: 20px;
+  width: 50%;
+  border: 1px solid #d7dfe9;
+  border-radius: 10px;
 }
 .history {
   font-size: 20px;
 }
 
 .lists {
-  list-style-type: none;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  width: 100%;
+  padding-left: 0px;
 }
-.contenelist {
+.contentlist {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+  border: 1px solid #d7dfe9;
+  width: 100%;
+  padding-top: 0px;
+}
+
+.historydetails {
+  width: 28%;
+  font-weight: bold;
 }

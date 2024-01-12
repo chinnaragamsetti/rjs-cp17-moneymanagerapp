@@ -1,4 +1,4 @@
-// import {v4 as uuidv4} from 'uuid'
+import {v4 as uuidv4} from 'uuid'
 import {Component} from 'react'
 import './index.css'
 import TransactionItem from '../TransactionItem'
@@ -42,7 +42,8 @@ class MoneyManager extends Component {
     this.setState({type: event.target.value})
   }
 
-  onAddbutton = () => {
+  onAddbutton = event => {
+    event.preventDefault()
     const {title, type, amount, balance, income, expenses, list} = this.state
     if (type === 'Income') {
       this.setState(prevState => ({
@@ -55,12 +56,20 @@ class MoneyManager extends Component {
         balance: prevState.income - amount,
       }))
     }
+
     const newtransaction = {
+      id: uuidv4(),
       title,
       amount,
       type,
     }
     this.setState({list: [...list, newtransaction]})
+  }
+
+  deleteTransaction = id => {
+    const {list} = this.state
+    const afterdeletelist = list.find(each => each.id !== id)
+    this.setState({list: afterdeletelist})
   }
 
   render() {
@@ -107,12 +116,15 @@ class MoneyManager extends Component {
             <h1 className="history">History</h1>
             <ul className="lists">
               <li className="contentlist">
-                <p className="title">Title</p>
-                <p className="title">Amount</p>
-                <p className="title">Type</p>
+                <p className="historydetails">Title</p>
+                <p className="historydetails">Amount</p>
+                <p className="historydetails">Type</p>
               </li>
               {list.map(each => (
-                <TransactionItem details={each} />
+                <TransactionItem
+                  details={each}
+                  deleteTransaction={this.deleteTransaction}
+                />
               ))}
             </ul>
           </div>
