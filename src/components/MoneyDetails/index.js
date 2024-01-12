@@ -16,7 +16,7 @@ const MoneyDetails = props => {
           />
         </div>
 
-        <div className="balance">
+        <div className="balancecon">
           <h1 className="balance">Your Balance</h1>
           <p className="amount">RS {balance}</p>
         </div>

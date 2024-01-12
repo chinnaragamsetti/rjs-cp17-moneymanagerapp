@@ -3,45 +3,74 @@
 .statuscontainer {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
-.eachcon1 {
+.eaccon1 {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+
+  align-items: center;
   background-color: #ecfccb;
+  width: 30%;
+  height: 100px;
+  border-radius: 10px;
 }
-.eachcon2 {
+.eaccon2 {
+  width: 30%;
+  height: 100px;
+  border-radius: 10px;
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+
+  align-items: center;
   background-color: #cffafe;
 }
 
-.eachcon3 {
+.eaccon3 {
+  width: 30%;
+  height: 100px;
+  border-radius: 10px;
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+
+  align-items: center;
   background-color: #ede9fe;
 }
 .imagecon1 {
   background-color: #84cc16;
   height: 30px;
-  width: auto;
+  width: 30px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
 .imagecon2 {
   background-color: #06b6d4;
   height: 30px;
-  width: auto;
+  width: 30px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
 .imagecon3 {
   background-color: #06b6d4;
   height: 30px;
-  width: auto;
+  width: 30px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
-
+.balancecon {
+  margin-left: 10px;
+}
+.balanceimage {
+  width: 20px;
+  height: 20px;
+}
 .balance {
   font-size: 15px;
 }

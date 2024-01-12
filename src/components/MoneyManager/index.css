@@ -2,22 +2,30 @@
 
 .maincontainer {
   height: 100vh;
-  padding: 20px;
+  padding: 70px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  padding-left: 70px;
+  padding-right: 70px;
+  display: flex;
+  flex-direction: column;
 }
 .profilecontainer {
   background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
-  padding: 20px;
-  border-radius: 5px;
+  padding: 10px;
+  background-size: cover;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  height: 25%;
 }
 .name {
-  font-size: 30px;
+  font-size: 20px;
 }
 .greet {
   font-size: 15px;
@@ -25,13 +33,17 @@
 
 .bottomcontainer {
   display: flex;
+  height: 50%;
 }
 .inputscontainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
-  width: 30%;
+
+  padding: 20px;
+  width: 40%;
+  border: 1px solid #d7dfe9;
+  border-radius: 10px;
 }
 .heading {
   font-size: 20px;
@@ -39,18 +51,32 @@
 
 .title {
   font-size: 15px;
+  margin-bottom: 5px;
 }
 .inputcontainer {
   padding: 10px;
   font-size: 15px;
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid #d7dfe9;
+}
+.type {
+  padding: 7px;
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
 .button {
-  background-color: blue;
+  background-color: #0b69ff;
   font-size: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  cursor: pointer;
+  width: 50px;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 0px;
 }
 
 .transactioncont {
