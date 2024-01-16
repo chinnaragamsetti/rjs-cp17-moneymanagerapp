@@ -30,6 +30,10 @@
 .greet {
   font-size: 15px;
 }
+.span {
+  font-size: 15px;
+  color: #0b69ff;
+}
 
 .bottomcontainer {
   display: flex;

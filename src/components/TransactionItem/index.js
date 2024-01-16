@@ -4,9 +4,9 @@ import './index.css'
 
 const TransactionItem = props => {
   const {deleteTransaction, details} = props
-  const {id, income, title, amount} = details
+  const {id, income, title, amount, type} = details
   const onDelete = () => {
-    deleteTransaction(id)
+    deleteTransaction(id, income, title, amount)
   }
   return (
     <li className="contentlist">
@@ -17,6 +17,7 @@ const TransactionItem = props => {
         <img
           src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
           alt="delete"
+          data-testid="delete"
           className="deleteicon"
         />
       </button>
