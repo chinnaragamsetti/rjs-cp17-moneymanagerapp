@@ -6,7 +6,7 @@ const MoneyDetails = props => {
   const {balance, income, expenses} = props
 
   return (
-    <div className="statuscontainer">
+    <li className="statuscontainer">
       <div className="eaccon1">
         <div className="imagecon1">
           <img
@@ -55,7 +55,7 @@ const MoneyDetails = props => {
           </p>
         </div>
       </div>
-    </div>
+    </li>
   )
 }
 export default MoneyDetails

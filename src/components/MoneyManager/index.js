@@ -66,7 +66,7 @@ class MoneyManager extends Component {
 
   deleteTransaction = (id, type, income, expenses, balance) => {
     const {list} = this.state
-    const afterdeletelist = list.find(each => each.id !== id)
+    const afterdeletelist = list.filter(each => each.id !== id)
     if (type === 'INCOME') {
       this.setState(prevState => ({
         list: afterdeletelist,
