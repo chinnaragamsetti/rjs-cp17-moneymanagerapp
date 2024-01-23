@@ -83,7 +83,7 @@ class MoneyManager extends Component {
   }
 
   render() {
-    const {balance, income, expenses, list} = this.state
+    const {title, amount, type, balance, income, expenses, list} = this.state
     return (
       <div className="maincontainer">
         <div className="profilecontainer">
@@ -102,6 +102,7 @@ class MoneyManager extends Component {
             <input
               id="title"
               type="text"
+              value={title}
               onChange={this.onChangetitle}
               className="inputcontainer"
               placeholder="TITLE"
@@ -114,12 +115,13 @@ class MoneyManager extends Component {
               className="inputcontainer"
               placeholder="AMOUNT"
               type="text"
+              value={amount}
               onChange={this.onChangeamount}
             />
             <p className="title">Type</p>
             <select name="type" className="type" onChange={this.onChangetype}>
               <option value={transactionTypeOptions[0].optionId}>Income</option>
-              <option value={transactionTypeOptions[0].optionId}>
+              <option value={transactionTypeOptions[1].optionId}>
                 Expenses
               </option>
             </select>

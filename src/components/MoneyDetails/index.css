@@ -6,6 +6,12 @@
   margin-top: 10px;
   margin-bottom: 40px;
 }
+.textcontent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .eaccon1 {
   display: flex;
 
