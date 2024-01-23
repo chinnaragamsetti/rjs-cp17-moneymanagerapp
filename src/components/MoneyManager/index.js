@@ -71,7 +71,7 @@ class MoneyManager extends Component {
       this.setState(prevState => ({
         list: afterdeletelist,
         income: prevState.income - income,
-        balance: prevState.balance - income,
+        balance: prevState.balance + income,
       }))
     } else {
       this.setState(prevState => ({
