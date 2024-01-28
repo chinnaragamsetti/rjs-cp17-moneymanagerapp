@@ -61,7 +61,11 @@ class MoneyManager extends Component {
       amount,
       type,
     }
-    this.setState(prevState => ({list: [...prevState.list, newtransaction]}))
+    this.setState(prevState => ({
+      list: [...prevState.list, newtransaction],
+      title: '',
+      type: '',
+    }))
   }
 
   deleteTransaction = (id, type, income, expenses, balance) => {
