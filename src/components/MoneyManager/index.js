@@ -20,7 +20,7 @@ const initialList = []
 class MoneyManager extends Component {
   state = {
     title: '',
-    amount: 0,
+    amount: '',
     type: '',
     balance: 0,
     income: 0,
@@ -47,11 +47,15 @@ class MoneyManager extends Component {
       this.setState(prevState => ({
         income: prevState.income + amount,
         balance: prevState.income - expenses,
+        title: '',
+        amount: '',
       }))
     } else {
       this.setState(prevState => ({
         expenses: prevState.expenses + amount,
         balance: prevState.balance - amount,
+        title: '',
+        amount: '',
       }))
     }
 
@@ -63,8 +67,6 @@ class MoneyManager extends Component {
     }
     this.setState(prevState => ({
       list: [...prevState.list, newtransaction],
-      title: '',
-      type: '',
     }))
   }
 
@@ -123,7 +125,7 @@ class MoneyManager extends Component {
               onChange={this.onChangeamount}
             />
             <p className="title">Type</p>
-            <select name="type" className="type" onChange={this.onChangetype}>
+            <select className="type" onChange={this.onChangetype}>
               <option value={transactionTypeOptions[0].optionId}>Income</option>
               <option value={transactionTypeOptions[1].optionId}>
                 Expenses
