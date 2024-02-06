@@ -1,8 +1,8 @@
 import {v4 as uuidv4} from 'uuid'
 import {Component} from 'react'
-import './index.css'
 import TransactionItem from '../TransactionItem'
 import MoneyDetails from '../MoneyDetails'
+import './index.css'
 
 const transactionTypeOptions = [
   {
@@ -40,24 +40,49 @@ class MoneyManager extends Component {
     this.setState({type: event.target.value})
   }
 
+
   onAddbutton = event => {
     event.preventDefault()
-    const {title, type, amount, balance, income, expenses, list} = this.state
-    if (type === 'INCOME') {
-      this.setState(prevState => ({
-        income: prevState.income + amount,
-        balance: prevState.income - expenses,
-        title: '',
-        amount: '',
-      }))
-    } else {
-      this.setState(prevState => ({
-        expenses: prevState.expenses + amount,
-        balance: prevState.balance - amount,
-        title: '',
-        amount: '',
-      }))
-    }
+    const {title, type, amount, expenses} = this.state
+
+      if (type === 'INCOME') {
+          if(income===0 && expenses===0 && balance===0){
+                this.setState({
+                income: amount,
+                balance:amount,
+                title: '',
+                amount: '',
+            })
+          }
+          
+          else{
+                this.setState(prevState=>({
+                    income:prevState.income+amount,
+                    balance:prevState.income-expenses,
+                    title:'',
+                    amount:'',
+                }))
+          }
+      }
+    else {
+        if(expenses===0 && income===0 && balance===0){
+                this.setState({
+                expenses: amount,
+                balance:0,
+                title: '',
+                amount: '',
+            })        
+          }
+          else{
+                this.setState(prevState=>({
+                    income:prevState.income+amount,
+                    balance:prevState.income-expenses
+                    title:'',
+                    amount:'',
+                }))
+          }
+    } 
+    
 
     const newtransaction = {
       id: uuidv4(),
@@ -90,6 +115,7 @@ class MoneyManager extends Component {
 
   render() {
     const {title, amount, type, balance, income, expenses, list} = this.state
+
     return (
       <div className="maincontainer">
         <div className="profilecontainer">
@@ -98,7 +124,7 @@ class MoneyManager extends Component {
             Welcome back to your <span className="span">Money Manager</span>
           </p>
         </div>
-        <MoneyDetails details={(balance, income, expenses)} />
+        <MoneyDetails balance={balance} amount={amount} expenses={expenses} />
         <div className="bottomcontainer">
           <form className="inputscontainer" onSubmit={this.onAddbutton}>
             <h1 className="heading">Add Transaction</h1>

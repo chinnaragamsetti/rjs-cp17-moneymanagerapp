@@ -15,11 +15,10 @@ const MoneyDetails = props => {
             className="balanceimage"
           />
         </div>
-
         <div className="balancecon">
           <p className="balance">Your Balance</p>
           <div className="textcontent">
-            <p className="amount">RS</p>
+            <p className="amount">RS </p>
             <p className="amount" data-testid="balanceAmount">
               {balance}
             </p>
@@ -34,11 +33,10 @@ const MoneyDetails = props => {
             className="balanceimage"
           />
         </div>
-
         <div className="balancecon">
           <p className="balance">Your Income</p>
           <div className="textcontent">
-            <p className="amount">RS</p>
+            <p className="amount">RS </p>
             <p className="amount" data-testid="incomeAmount">
               {income}
             </p>
@@ -53,11 +51,10 @@ const MoneyDetails = props => {
             className="balanceimage"
           />
         </div>
-
         <div className="balancecon">
           <p className="balance">Your Expenses</p>
           <div className="textcontent">
-            <p className="amount">RS</p>
+            <p className="amount">RS </p>
             <p className="amount" data-testid="expensesAmount">
               {expenses}
             </p>

@@ -9,11 +9,19 @@
   padding-top: 0px;
 }
 .transactiondetails {
-  width: 28%;
+  width: 25%;
   color: #7e858e;
+  text-align: center;
 }
-
+.deletebutton {
+  background-color: transparent;
+  border: 0px;
+  width: 25%;
+}
 .deleteicon {
   width: 10px;
   height: 10px;
+  display: flex;
+
+  align-self: center;
 }
