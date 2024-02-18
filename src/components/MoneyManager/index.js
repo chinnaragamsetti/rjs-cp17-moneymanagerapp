@@ -33,56 +33,41 @@ class MoneyManager extends Component {
   }
 
   onChangeamount = event => {
-    this.setState({amount: event.target.value})
+    this.setState({amount: parseInt(event.target.value)})
   }
 
   onChangetype = event => {
     this.setState({type: event.target.value})
   }
 
-
   onAddbutton = event => {
     event.preventDefault()
-    const {title, type, amount, expenses} = this.state
-
-      if (type === 'INCOME') {
-          if(income===0 && expenses===0 && balance===0){
-                this.setState({
-                income: amount,
-                balance:amount,
-                title: '',
-                amount: '',
-            })
-          }
-          
-          else{
-                this.setState(prevState=>({
-                    income:prevState.income+amount,
-                    balance:prevState.income-expenses,
-                    title:'',
-                    amount:'',
-                }))
-          }
+    const {title, type, amount, income, expenses} = this.state
+    if (type === 'INCOME') {
+      if (income === 0) {
+        this.setState({income: amount})
+        this.setState(prevState => ({balance: prevState.income - expenses}))
+        this.setState({title: ''})
+        this.setState({amount: ''})
+      } else {
+        this.setState(prevState => ({income: prevState.income + amount}))
+        this.setState(prevState => ({balance: prevState.income - expenses}))
+        this.setState({title: ''})
+        this.setState({amount: ''})
       }
-    else {
-        if(expenses===0 && income===0 && balance===0){
-                this.setState({
-                expenses: amount,
-                balance:0,
-                title: '',
-                amount: '',
-            })        
-          }
-          else{
-                this.setState(prevState=>({
-                    income:prevState.income+amount,
-                    balance:prevState.income-expenses
-                    title:'',
-                    amount:'',
-                }))
-          }
-    } 
-    
+    } else if (type === 'EXPENSES') {
+      if (expenses === 0) {
+        this.setState({expenses: amount})
+        this.setState(prevState => ({balance: income - prevState.expenses}))
+        this.setState({title: ''})
+        this.setState({amount: ''})
+      } else {
+        this.setState(prevState => ({expenses: prevState.expenses + amount}))
+        this.setState(prevState => ({balance: income - prevState.expenses}))
+        this.setState({title: ''})
+        this.setState({amount: ''})
+      }
+    }
 
     const newtransaction = {
       id: uuidv4(),
@@ -95,26 +80,28 @@ class MoneyManager extends Component {
     }))
   }
 
-  deleteTransaction = (id, type, income, expenses, balance) => {
+  deleteTransaction = (id, type, amount) => {
     const {list} = this.state
+    const {income, expenses} = this.state
+
+    console.log(`${amount} a`)
+    console.log(`${type} t`)
+    console.log(`${income} i`)
+    console.log(`${expenses} e`)
     const afterdeletelist = list.filter(each => each.id !== id)
     if (type === 'INCOME') {
-      this.setState(prevState => ({
-        list: afterdeletelist,
-        income: prevState.income - income,
-        balance: prevState.balance + income,
-      }))
+      this.setState({list: afterdeletelist})
+      this.setState(prevState => ({income: prevState.income - amount}))
+      this.setState(prevState => ({balance: prevState.income - expenses}))
     } else {
-      this.setState(prevState => ({
-        list: afterdeletelist,
-        expenses: prevState.expenses - expenses,
-        balance: prevState.balance + expenses,
-      }))
+      this.setState({list: afterdeletelist})
+      this.setState(prevState => ({expenses: prevState.expenses - amount}))
+      this.setState(prevState => ({balance: income - prevState.expenses}))
     }
   }
 
   render() {
-    const {title, amount, type, balance, income, expenses, list} = this.state
+    const {title, amount, balance, income, expenses, list} = this.state
 
     return (
       <div className="maincontainer">
@@ -124,7 +111,7 @@ class MoneyManager extends Component {
             Welcome back to your <span className="span">Money Manager</span>
           </p>
         </div>
-        <MoneyDetails balance={balance} amount={amount} expenses={expenses} />
+        <MoneyDetails balance={balance} income={income} expenses={expenses} />
         <div className="bottomcontainer">
           <form className="inputscontainer" onSubmit={this.onAddbutton}>
             <h1 className="heading">Add Transaction</h1>

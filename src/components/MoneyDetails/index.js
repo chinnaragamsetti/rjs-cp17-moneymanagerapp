@@ -17,12 +17,7 @@ const MoneyDetails = props => {
         </div>
         <div className="balancecon">
           <p className="balance">Your Balance</p>
-          <div className="textcontent">
-            <p className="amount">RS </p>
-            <p className="amount" data-testid="balanceAmount">
-              {balance}
-            </p>
-          </div>
+          <p className="amount">RS {balance}</p>
         </div>
       </div>
       <div className="eaccon2">
@@ -35,12 +30,7 @@ const MoneyDetails = props => {
         </div>
         <div className="balancecon">
           <p className="balance">Your Income</p>
-          <div className="textcontent">
-            <p className="amount">RS </p>
-            <p className="amount" data-testid="incomeAmount">
-              {income}
-            </p>
-          </div>
+          <p className="amount">RS {income}</p>
         </div>
       </div>
       <div className="eaccon3">
@@ -53,12 +43,8 @@ const MoneyDetails = props => {
         </div>
         <div className="balancecon">
           <p className="balance">Your Expenses</p>
-          <div className="textcontent">
-            <p className="amount">RS </p>
-            <p className="amount" data-testid="expensesAmount">
-              {expenses}
-            </p>
-          </div>
+
+          <p className="amount">RS {expenses}</p>
         </div>
       </div>
     </li>
